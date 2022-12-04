@@ -8,6 +8,26 @@
   }
   window.onmousemove = navigation;
 
+  //modal
+  var modal = document.querySelector(".modal");
+  var trigger = document.querySelector(".example");
+  var closeButton = document.querySelector(".close-button");
+
+  function toggleModal() {
+    modal.classList.toggle("show-modal");
+  }
+
+  function windowOnClick(event) {
+    if (event.target === modal) {
+      toggleModal();
+    }
+  }
+
+  trigger.addEventListener("click", toggleModal);
+  closeButton.addEventListener("click", toggleModal);
+  window.addEventListener("click", windowOnClick);
+
+  //keydown
   document.addEventListener("keydown", (e) => {
     if (e.key === "Home") {
       turnFullscreen();
@@ -25,17 +45,9 @@
         slideMode = true;
         fullscreen();
         nav.classList.add("notmove");
-        body.style.cursor = "none";
       }
     }
   }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      alert("Vous avez appuyé sur la touche Echap");
-      turnFullscreen();
-    }
-  });
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight" && slideMode) {
@@ -60,14 +72,14 @@
 
   var timeout;
   function navigation() {
+    clearTimeout(timeout);
     if (!slideMode) {
-      clearTimeout(timeout);
       nav.classList.remove("notmove");
-      body.style.cursor = "default";
-      timeout = setTimeout(function () {
-        nav.classList.add("notmove");
-        body.style.cursor = "none";
-      }, 3000);
     }
+    body.style.cursor = "default";
+    timeout = setTimeout(function () {
+      nav.classList.add("notmove");
+      body.style.cursor = "none";
+    }, 3000);
   }
 })();
