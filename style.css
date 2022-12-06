@@ -7,7 +7,6 @@
   -ms-user-select: none;
   -khtml-user-select: none;
   user-select: none;
-  /* cursor: none; */
 }
 
 :root {
@@ -15,6 +14,8 @@
   --main-bg-color: #1a1a1a;
   --gradient-purple: rgba(135, 0, 177, 1);
   --gradient-pink: rgba(168, 18, 74, 1);
+  --gradient-aqua: rgba(0, 177, 177, 1);
+  --gradient-blue: rgba(0, 135, 177, 1);
 }
 
 @font-face {
@@ -46,6 +47,15 @@
   /* https://zeldauniverse.net/media/fonts/ */
   font-family: "Zelda";
   src: url(./font/ZeldaDXTTBRK.ttf);
+}
+
+body {
+  background: linear-gradient(
+    60deg,
+    var(--gradient-blue) 0%,
+    var(--gradient-aqua) 100%
+  );
+  height: 200vh;
 }
 
 .inner-header h1 {

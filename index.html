@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="Application.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="snow.css" />
+    <title>Portfolio</title>
   </head>
   <body>
     <!--Hey! This is the original version
@@ -17,6 +19,7 @@ of Simple CSS Waves-->
           <a href="#">Accueil</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
+          <a href="./portfolio.html">Portfolio</a>
         </div>
       </nav>
       <!--Content before waves-->
@@ -27,14 +30,31 @@ of Simple CSS Waves-->
       </div>
       <!--Content ends-->
 
-      <!--Waves Container-->
-      <button class="example">Cliquez ici pour voir le modal!</button>
+      <!-- <button class="example">modal</button> -->
       <div class="modal">
         <div class="modal-content">
           <span class="close-button">&times;</span>
-          <h2>Ceci est un Modal</h2>
+          <h4>Ceci est un Modal</h2>
+          <button class="button-modal ok">Ok</button>
+          <button class="button-modal cancel">Annuler</button>
         </div>
       </div>
+
+      <!-- Snow -->
+      <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+      </div>
+
+      <!--Waves Container-->
       <div id="waves">
         <svg
           class="waves"
@@ -80,64 +100,53 @@ of Simple CSS Waves-->
         <p>By Loïc PUPIER</p>
       </div>
 
-      <!--Waves Container-->
-      <div id="waves2">
-        <svg
-          class="waves"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 24 150 28"
-          preserveAspectRatio="none"
-          shape-rendering="auto"
-        >
-          <defs>
-            <path
-              id="gentle-wave"
-              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-            />
-          </defs>
-          <g class="parallax">
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="0"
-              fill="rgba(255,255,255,0.7"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="3"
-              fill="rgba(255,255,255,0.5)"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="5"
-              fill="rgba(255,255,255,0.3)"
-            />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-          </g>
-        </svg>
-      </div>
+      
       <!--Waves end-->
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
-      <h1>Lorem</h1>
     </div>
+    <!--Waves Container-->
+    <div id="waves2">
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g class="parallax">
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="0"
+            fill="rgba(255,255,255,0.7"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="3"
+            fill="rgba(255,255,255,0.5)"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="5"
+            fill="rgba(255,255,255,0.3)"
+          />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
+    </div>
+    <!--Waves end-->
+
+
     <!--Header ends-->
     <script src="script.js" defer></script>
+    <script src="modal.js" defer></script>
   </body>
 </html>
