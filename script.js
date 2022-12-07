@@ -8,19 +8,50 @@
   }
   window.onmousemove = navigation;
 
-  //snowing
-  var date = new Date().getMonth();
-  if (date === 11) {
-    const snowflakes = document.querySelectorAll(".snowflake");
-    snowflakes.forEach((element) => {
-      element.style.display = "block";
-      element.classList.add("snowflake");
-    });
+  // const scroll = document.getElementsByClassName("arrow-container")[0];
+  // scroll.addEventListener("click", () => {
+  //   window.scrollTo({
+  //     top: window.innerHeight,
+  //     behavior: "smooth",
+  //   });
+  // });
+
+  //when we scroll down, the page goes down by the height of the client height
+  window.onscroll = function () {
+    if (window.scrollY > window.innerHeight) {
+      window.scrollTo({
+        top: window.innerHeight * 2,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  function addFlake(content) {
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("snowflakes");
+    for (let i = 0; i < 10; i++) {
+      let newContent = document.createElement("div");
+      newContent.classList.add("snowflake");
+      newContent.innerHTML = content[getRandomInt(content.length)];
+      newDiv.appendChild(newContent);
+      document.body.insertBefore(newDiv, document.body.childNodes[0]);
+    }
   }
 
-  // if (date === 11) {
-  //   document.getElementsByTagName("body")[0].classList.add("snowing");
-  // }
+  //snowing
+  var date = new Date();
+  if (date.getMonth() === 11) {
+    let noel = ["❅", "❆", "❄"];
+    addFlake(noel);
+  }
+  if (date.getDate() === 31 && date.getMonth() === 9) {
+    let halloween = ["🕸", "🕷"];
+    addFlake(halloween);
+  }
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 
   //keydown
   document.addEventListener("keydown", (e) => {
@@ -28,6 +59,8 @@
       turnFullscreen();
     }
   });
+
+  // 🎃🕸🕷🦇
 
   function turnFullscreen() {
     if (slideMode) {
