@@ -1,32 +1,28 @@
 (function () {
   const nav = document.getElementsByTagName("nav")[0];
   const body = document.getElementsByTagName("body")[0];
-  var slideMode = false;
 
   if (window.onmousemove) {
     navigation();
   }
   window.onmousemove = navigation;
 
-  // const scroll = document.getElementsByClassName("arrow-container")[0];
-  // scroll.addEventListener("click", () => {
-  //   window.scrollTo({
-  //     top: window.innerHeight,
-  //     behavior: "smooth",
-  //   });
+  // window.addEventListener("wheel", (e) => {
+  //   console.log("wheel");
+  //   if (e.deltaY > 0) {
+  //     window.scrollTo({
+  //       top: window.innerHeight,
+  //       behavior: "smooth",
+  //     });
+  //   } else {
+  //     window.scrollTo({
+  //       top: -window.innerHeight,
+  //       behavior: "smooth",
+  //     });
+  //   }
   // });
 
-  //when we scroll down, the page goes down by the height of the client height
-  window.onscroll = function () {
-    if (window.scrollY > window.innerHeight) {
-      window.scrollTo({
-        top: window.innerHeight * 2,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  function addFlake(content) {
+  function addRainDecoration(content) {
     let newDiv = document.createElement("div");
     newDiv.classList.add("snowflakes");
     for (let i = 0; i < 10; i++) {
@@ -38,15 +34,16 @@
     }
   }
 
-  //snowing
   var date = new Date();
-  if (date.getMonth() === 11) {
+  if (date.getDate() === 25 && date.getMonth() === 11) {
     let noel = ["❅", "❆", "❄"];
-    addFlake(noel);
-  }
-  if (date.getDate() === 31 && date.getMonth() === 9) {
+    addRainDecoration(noel);
+  } else if (date.getDate() === 31 && date.getMonth() === 9) {
     let halloween = ["🕸", "🕷"];
-    addFlake(halloween);
+    addRainDecoration(halloween);
+  } else if (date.getDate() === 1 && date.getMonth() === 0) {
+    let newYear = ["🎊", "🎉"];
+    addRainDecoration(newYear);
   }
 
   function getRandomInt(max) {
@@ -60,26 +57,36 @@
     }
   });
 
-  // 🎃🕸🕷🦇
-
   function turnFullscreen() {
-    if (slideMode) {
-      slideMode = false;
+    if (window.innerHeight == screen.height) {
       document.exitFullscreen();
       nav.classList.remove("notmove");
       body.style.cursor = "default";
     } else {
-      if (confirm("Voulez-vous vraiment passer en mode diaporama ?")) {
-        slideMode = true;
+      if (true) {
         fullscreen();
         nav.classList.add("notmove");
       }
     }
   }
-
   document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight" && slideMode) {
-      alert("next");
+    if (e.key === "ArrowRight" && window.innerHeight == screen.height) {
+      console.log("next");
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft" && window.innerHeight == screen.height) {
+      console.log("prec");
+    }
+  });
+
+  var keys = [];
+  window.addEventListener("keypress", (e) => {
+    console.log(e.key);
+    keys.push(e.key);
+    keys.splice(-6, keys.length - 5);
+    if (keys.join("").includes("diapo")) {
+      turnFullscreen();
     }
   });
 
@@ -101,13 +108,16 @@
   var timeout;
   function navigation() {
     clearTimeout(timeout);
-    if (!slideMode) {
-      nav.classList.remove("notmove");
-    }
-    body.style.cursor = "default";
-    timeout = setTimeout(function () {
+    if (window.innerHeight == screen.height) {
       nav.classList.add("notmove");
       body.style.cursor = "none";
-    }, 3000);
+    } else {
+      nav.classList.remove("notmove");
+      body.style.cursor = "default";
+      timeout = setTimeout(function () {
+        nav.classList.add("notmove");
+        body.style.cursor = "none";
+      }, 3000);
+    }
   }
 })();
