@@ -5,13 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="icon" href="Application.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="snow.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/snow.css" />
+    <link rel="stylesheet" href="assets/css/loader.css" />
+    <script src="assets/js/loader.js"></script>
     <title>Portfolio</title>
   </head>
   <body>
-    <!--Hey! This is the original version
-of Simple CSS Waves-->
+    <!-- loader -->
+    <div class="loader">
+      <div class="container">
+        <svg
+          class="svgloader"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 340 340"
+        >
+          <circle cx="170" cy="170" r="160" stroke="white" />
+          <circle cx="170" cy="170" r="135" stroke="purple" />
+          <circle cx="170" cy="170" r="110" stroke="white" />
+          <circle cx="170" cy="170" r="85" stroke="purple" />
+          <circle cx="170" cy="170" r="60" stroke="white" />
+        </svg>
+        <h1>loading...</h1>
+      </div>
+    </div>
+    <!-- end loader -->
 
     <div class="home">
       <nav>
@@ -151,7 +169,7 @@ of Simple CSS Waves-->
 
 
     <!--Header ends-->
-    <script src="script.js" defer></script>
-    <script src="modal.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/modal.js" defer></script>
   </body>
 </html>

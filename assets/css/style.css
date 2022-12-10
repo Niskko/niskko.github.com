@@ -21,32 +21,32 @@
 @font-face {
   /* https://fonts.google.com/specimen/Nerko+One */
   font-family: "Nerko One";
-  src: url(./font/NerkoOne-Regular.ttf);
+  src: url(../font/NerkoOne-Regular.ttf);
 }
 @font-face {
   /* https://fonts.google.com/specimen/Rubik+Glitch */
   font-family: "Glitch";
-  src: url(./font/RubikGlitch-Regular.ttf);
+  src: url(../font/RubikGlitch-Regular.ttf);
 }
 @font-face {
   /* https://fonts.google.com/specimen/Permanent+Marker  */
   font-family: "Marker";
-  src: url(./font/PermanentMarker-Regular.ttf);
+  src: url(../font/PermanentMarker-Regular.ttf);
 }
 @font-face {
   /* https://zeldauniverse.net/media/fonts/ */
   font-family: "Reggae One";
-  src: url(./font/ReggaeOne-Regular.ttf);
+  src: url(../font/ReggaeOne-Regular.ttf);
 }
 @font-face {
   /* https://zeldauniverse.net/media/fonts/ */
   font-family: "Sherwood";
-  src: url(./font/SherwoodRegular.ttf);
+  src: url(../font/SherwoodRegular.ttf);
 }
 @font-face {
   /* https://zeldauniverse.net/media/fonts/ */
   font-family: "Zelda";
-  src: url(./font/ZeldaDXTTBRK.ttf);
+  src: url(../font/ZeldaDXTTBRK.ttf);
 }
 
 body {
@@ -82,13 +82,14 @@ nav {
   position: fixed;
   justify-content: center;
   padding-top: 2vh;
+  z-index: 9;
 }
 nav div {
   display: flex;
-  width: 70vh;
+  width: 40vw;
   justify-content: space-around;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(220, 220, 220, 0.8);
   border-radius: 20px 10px / 20px 10px;
 }
 nav div a {
@@ -119,6 +120,12 @@ nav div a:hover {
   display: none;
 }
 
+.nav {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
 .notmove {
   transform: translateY(-200px);
   transition: transform 0.3s;
@@ -141,8 +148,6 @@ li {
 .inner-header {
   height: 70vh;
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 .modal {
@@ -266,7 +271,7 @@ li {
 }
 
 .content {
-  position: relative;
+  position: static;
   height: 20vh;
   text-align: center;
   background-color: var(--main-color);
@@ -307,6 +312,10 @@ li {
 }
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
+  nav div {
+    width: 80vw;
+    font-size: 3vw;
+  }
   .waves {
     height: 40px;
     min-height: 40px;

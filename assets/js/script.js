@@ -69,6 +69,9 @@
       }
     }
   }
+
+  console.log(screen.width);
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight" && window.innerHeight == screen.height) {
       console.log("next");
