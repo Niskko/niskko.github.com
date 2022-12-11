@@ -8,52 +8,33 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/snow.css" />
     <link rel="stylesheet" href="assets/css/loader.css" />
+    <link rel="stylesheet" href="assets/css/home.css">
     <script src="assets/js/loader.js"></script>
-    <title>Portfolio</title>
+    <title>Accueil</title>
   </head>
   <body>
-    <!-- loader -->
-    <div class="loader">
-      <div class="container">
-        <svg
-          class="svgloader"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 340 340"
-        >
-          <circle cx="170" cy="170" r="160" stroke="white" />
-          <circle cx="170" cy="170" r="135" stroke="purple" />
-          <circle cx="170" cy="170" r="110" stroke="white" />
-          <circle cx="170" cy="170" r="85" stroke="purple" />
-          <circle cx="170" cy="170" r="60" stroke="white" />
-        </svg>
-        <h1>loading...</h1>
-      </div>
-    </div>
-    <!-- end loader -->
+    <header>
 
-    <div class="home">
-      <nav>
-        <div>
-          <a href="#">Accueil</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-          <a href="./portfolio.html">Portfolio</a>
+      <!-- Loader -->
+      <div class="loader">
+        <div class="container">
+          <svg
+            class="svgloader"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 340 340"
+          >
+            <circle cx="170" cy="170" r="160" stroke="white" />
+            <circle cx="170" cy="170" r="135" stroke="purple" />
+            <circle cx="170" cy="170" r="110" stroke="white" />
+            <circle cx="170" cy="170" r="85" stroke="purple" />
+            <circle cx="170" cy="170" r="60" stroke="white" />
+          </svg>
+          <h1>Chargement...</h1>
         </div>
-      </nav>
-      <!--Content before waves-->
-      <div class="inner-header center flex-column">
-        <!--Just the logo.. Don't mind this-->
-        <h1>Loïc PUPIER</h1>
-        <h2>Web Developer</h2>
-        <a href="#" class="arrow-container">
-          <div class="arrow"></div>
-          <div class="arrow"></div>
-          <div class="arrow"></div>  
-        </a>        
       </div>
-      <!--Content ends-->
+      <!-- end Loader -->
 
-      <!-- <button class="example">modal</button> -->
+      <!-- Modal -->
       <div class="modal">
         <div class="modal-content">
           <span class="close-button">&times;</span>
@@ -62,22 +43,38 @@
           <button class="button-modal cancel">Annuler</button>
         </div>
       </div>
+      <!-- end Modal -->
 
-      <!-- Snow -->
-      <!-- <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
-      </div> -->
+      <!-- Nav -->
+      <nav>
+        <div>
+          <a href="#">Accueil</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="./portfolio.html">Portfolio</a>
+        </div>
+      </nav>
+      <!-- end Nav -->
 
-      <!--Waves Container-->
+    </header>
+
+    <!-- Top page -->
+    <div class="top-page">
+      <!-- Title -->
+      <div class="inner-header center flex-column">
+        <h1>Loïc PUPIER</h1>
+        <h2>Web Developer</h2>
+        <a href="#test" class="arrow-container">
+          <div class="arrow"></div>
+          <div class="arrow"></div>
+          <div class="arrow"></div>  
+        </a>        
+      </div>
+      <!-- end Title -->
+
+      <!-- <button class="example">modal</button> -->
+
+      <!-- top Waves -->
       <div id="waves">
         <svg
           class="waves"
@@ -116,59 +113,60 @@
           </g>
         </svg>
       </div>
-      <!--Waves end-->
+      <!-- end top Waves -->
+    </div>
+    <!-- end Top page -->
 
-      <!--Content starts-->
-      <div class="content center">
-        <p>By Loïc PUPIER</p>
+    <!-- middle-Waves -->
+    <div id="test" class="content center">
+      <p>By Loïc PUPIER</p>
+    </div>  
+    <!-- end middle-Waves -->
+
+    <div class="bottom-page">
+      <!-- bottom Waves -->
+      <div id="waves2">
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
+          </defs>
+          <g class="parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="rgba(255,255,255,0.7"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(255,255,255,0.5)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(255,255,255,0.3)"
+            />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+          </g>
+        </svg>
       </div>
-
-      
-      <!--Waves end-->
+      <!-- end bottom Waves-->
     </div>
-    <!--Waves Container-->
-    <div id="waves2">
-      <svg
-        class="waves"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28"
-        preserveAspectRatio="none"
-        shape-rendering="auto"
-      >
-        <defs>
-          <path
-            id="gentle-wave"
-            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-          />
-        </defs>
-        <g class="parallax">
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="0"
-            fill="rgba(255,255,255,0.7"
-          />
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="3"
-            fill="rgba(255,255,255,0.5)"
-          />
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="5"
-            fill="rgba(255,255,255,0.3)"
-          />
-          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-        </g>
-      </svg>
-    </div>
-    <!--Waves end-->
 
-
-    <!--Header ends-->
+    <!-- Script -->
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/modal.js" defer></script>
   </body>

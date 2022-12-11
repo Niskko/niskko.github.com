@@ -1,332 +1,277 @@
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -khtml-user-select: none;
-  user-select: none;
+	margin: 0;
+	padding: 0;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
 }
 
 :root {
-  --main-color: white;
-  --main-bg-color: #1a1a1a;
-  --gradient-purple: rgba(135, 0, 177, 1);
-  --gradient-pink: rgba(168, 18, 74, 1);
-  --gradient-aqua: rgba(0, 177, 177, 1);
-  --gradient-blue: rgba(0, 135, 177, 1);
+	--main-color: white;
+	--main-bg-color: #1a1a1a;
+	--gradient-purple: rgba(135, 0, 177, 1);
+	--gradient-pink: rgba(168, 18, 74, 1);
+	--gradient-aqua: rgba(0, 177, 177, 1);
+	--gradient-blue: rgba(0, 135, 177, 1);
 }
 
 @font-face {
-  /* https://fonts.google.com/specimen/Nerko+One */
-  font-family: "Nerko One";
-  src: url(../font/NerkoOne-Regular.ttf);
+	/* https://fonts.google.com/specimen/Nerko+One */
+	font-family: 'Nerko One';
+	src: url(../font/NerkoOne-Regular.ttf);
 }
 @font-face {
-  /* https://fonts.google.com/specimen/Rubik+Glitch */
-  font-family: "Glitch";
-  src: url(../font/RubikGlitch-Regular.ttf);
+	/* https://fonts.google.com/specimen/Rubik+Glitch */
+	font-family: 'Glitch';
+	src: url(../font/RubikGlitch-Regular.ttf);
 }
 @font-face {
-  /* https://fonts.google.com/specimen/Permanent+Marker  */
-  font-family: "Marker";
-  src: url(../font/PermanentMarker-Regular.ttf);
+	/* https://fonts.google.com/specimen/Permanent+Marker  */
+	font-family: 'Marker';
+	src: url(../font/PermanentMarker-Regular.ttf);
 }
 @font-face {
-  /* https://zeldauniverse.net/media/fonts/ */
-  font-family: "Reggae One";
-  src: url(../font/ReggaeOne-Regular.ttf);
+	/* https://zeldauniverse.net/media/fonts/ */
+	font-family: 'Reggae One';
+	src: url(../font/ReggaeOne-Regular.ttf);
 }
 @font-face {
-  /* https://zeldauniverse.net/media/fonts/ */
-  font-family: "Sherwood";
-  src: url(../font/SherwoodRegular.ttf);
+	/* https://zeldauniverse.net/media/fonts/ */
+	font-family: 'Sherwood';
+	src: url(../font/SherwoodRegular.ttf);
 }
 @font-face {
-  /* https://zeldauniverse.net/media/fonts/ */
-  font-family: "Zelda";
-  src: url(../font/ZeldaDXTTBRK.ttf);
+	/* https://zeldauniverse.net/media/fonts/ */
+	font-family: 'Zelda';
+	src: url(../font/ZeldaDXTTBRK.ttf);
 }
 
-body {
-  background: linear-gradient(
-    60deg,
-    var(--gradient-blue) 0%,
-    var(--gradient-aqua) 100%
-  );
-  height: 190vh;
+.bottom-page {
+	background: linear-gradient(
+		60deg,
+		var(--gradient-blue) 0%,
+		var(--gradient-aqua) 100%
+	);
+	height: 85vh;
 }
 
 .inner-header h1 {
-  font-family: "Marker";
-  letter-spacing: 0.5vw;
-  font-size: 10vw;
+	font-family: 'Marker';
+	letter-spacing: 0.5vw;
+	font-size: 10vw;
 }
 
 h2 {
-  font-family: "Reggae One";
-  font-size: 3vw;
+	font-family: 'Reggae One';
+	font-size: 3vw;
 }
 
 p {
-  font-family: "Reggae One";
-  letter-spacing: 0.1vw;
-  color: #333333;
+	font-family: 'Reggae One';
+	letter-spacing: 0.1vw;
+	color: #333333;
 }
 
 nav {
-  display: flex;
-  height: 5vh;
-  width: 100%;
-  position: fixed;
-  justify-content: center;
-  padding-top: 2vh;
-  z-index: 9;
+	display: flex;
+	height: 5vh;
+	width: 100%;
+	position: fixed;
+	justify-content: center;
+	padding-top: 2vh;
+	z-index: 9;
 }
 nav div {
-  display: flex;
-  width: 40vw;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgba(220, 220, 220, 0.8);
-  border-radius: 20px 10px / 20px 10px;
+	display: flex;
+	width: 40vw;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgba(220, 220, 220, 0.8);
+	border-radius: 20px 10px / 20px 10px;
 }
 nav div a {
-  text-decoration: none;
-  font-weight: bold;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 90%;
-  width: 9vh;
-  padding-left: 5%;
-  padding-right: 5%;
-  border-radius: 12px;
-  font-family: "Reggae One";
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 90%;
+	width: 9vh;
+	padding-left: 5%;
+	padding-right: 5%;
+	border-radius: 12px;
+	font-family: 'Reggae One';
 }
 
 nav div a:hover {
-  background: linear-gradient(
-    60deg,
-    var(--gradient-purple) 0%,
-    var(--gradient-pink) 100%
-  );
-  color: white;
+	background: linear-gradient(
+		60deg,
+		var(--gradient-purple) 0%,
+		var(--gradient-pink) 100%
+	);
+	color: white;
 }
 
 ::-webkit-scrollbar {
-  display: none;
-}
-
-.nav {
-  width: 90%;
-  display: flex;
-  justify-content: center;
+	display: none;
 }
 
 .notmove {
-  transform: translateY(-200px);
-  transition: transform 0.3s;
+	transform: translateY(-200px);
+	transition: transform 0.3s;
 }
 
 li {
-  list-style: none;
+	list-style: none;
 }
 
-.home {
-  text-align: center;
-  background: linear-gradient(
-    60deg,
-    var(--gradient-purple) 0%,
-    var(--gradient-pink) 100%
-  );
-  color: var(--main-color);
+.top-page {
+	text-align: center;
+	background: linear-gradient(
+		60deg,
+		var(--gradient-purple) 0%,
+		var(--gradient-pink) 100%
+	);
+	color: var(--main-color);
 }
 
 .inner-header {
-  height: 70vh;
-  width: 100%;
+	height: 70vh;
+	width: 100%;
 }
 
 .modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(1.1);
-  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(1.1);
+	transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
 .modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: black;
-  padding: 1rem 1.5rem;
-  width: 24rem;
-  border-radius: 0.5rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: black;
+	padding: 1rem 1.5rem;
+	width: 24rem;
+	border-radius: 0.5rem;
 }
 .close-button {
-  float: right;
-  width: 1rem;
-  line-height: 1.5rem;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 30px;
-  background-color: grey;
+	float: right;
+	width: 1rem;
+	line-height: 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 30px;
+	background-color: grey;
 }
 .close-button:hover {
-  background-color: red;
+	background-color: red;
 }
 .show-modal {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 .center {
-  /*Flexbox for containers*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	/*Flexbox for containers*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .flex-column {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 /* Arrow */
 
 .arrow-container {
-  display: block;
-  width: 100px;
-  height: 70px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 50%) rotateZ(0deg);
+	display: block;
+	width: 100px;
+	height: 70px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 50%) rotateZ(0deg);
 }
 .arrow-container:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 .arrow-container:hover .arrow {
-  top: 50%;
+	top: 50%;
 }
 .arrow-container:hover .arrow:before {
-  transform: translate(-50%, -50%) rotateZ(-30deg);
+	transform: translate(-50%, -50%) rotateZ(-30deg);
 }
 .arrow-container:hover .arrow:after {
-  transform: translate(-50%, -50%) rotateZ(30deg);
+	transform: translate(-50%, -50%) rotateZ(30deg);
 }
 
 .arrow {
-  position: absolute;
-  left: 50%;
-  transition: all 0.4s ease;
+	position: absolute;
+	left: 50%;
+	transition: all 0.4s ease;
 }
 .arrow:before,
 .arrow:after {
-  transition: all 0.4s ease;
-  content: "";
-  display: block;
-  position: absolute;
-  transform-origin: bottom right;
-  background: white;
-  width: 4px;
-  height: 35px;
-  border-radius: 10px;
-  transform: translate(-50%, -50%) rotateZ(-45deg);
+	transition: all 0.4s ease;
+	content: '';
+	display: block;
+	position: absolute;
+	transform-origin: bottom right;
+	background: white;
+	width: 4px;
+	height: 35px;
+	border-radius: 10px;
+	transform: translate(-50%, -50%) rotateZ(-45deg);
 }
 .arrow:after {
-  transform-origin: bottom left;
-  transform: translate(-50%, -50%) rotateZ(45deg);
+	transform-origin: bottom left;
+	transform: translate(-50%, -50%) rotateZ(45deg);
 }
 .arrow:nth-child(1) {
-  opacity: 0.3;
-  top: 35%;
+	opacity: 0.3;
+	top: 35%;
 }
 .arrow:nth-child(2) {
-  opacity: 0.6;
-  top: 55%;
+	opacity: 0.6;
+	top: 55%;
 }
 .arrow:nth-child(3) {
-  opacity: 0.9;
-  top: 75%;
+	opacity: 0.9;
+	top: 75%;
 }
 
-/* Waves */
-.waves {
-  width: 100%;
-  height: 15vh;
-  margin-bottom: -7px; /*Fix for safari gap*/
-  min-height: 100px;
-  max-height: 150px;
-}
-
-.content {
-  position: static;
-  height: 20vh;
-  text-align: center;
-  background-color: var(--main-color);
-}
-
-#waves2 {
-  transform: rotate(180deg);
-}
-
-/* Animation */
-
-.parallax > use {
-  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-}
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
-}
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
-  nav div {
-    width: 80vw;
-    font-size: 3vw;
-  }
-  .waves {
-    height: 40px;
-    min-height: 40px;
-  }
-  .inner-header {
-    height: 85vh;
-  }
-  .content {
-    height: 10vh;
-  }
-  .snowflakes {
-    display: none;
-  }
+	nav div {
+		width: 80vw;
+		font-size: 3vw;
+	}
+	.waves {
+		height: 40px;
+		min-height: 40px;
+	}
+	.inner-header {
+		height: 85vh;
+	}
+	.content {
+		height: 10vh;
+	}
+	.snowflakes {
+		display: none;
+	}
 }
