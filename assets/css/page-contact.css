@@ -1,0 +1,7 @@
+/* rouge */
+svg > path:nth-child(1) {
+	fill: var(--contact-page-light);
+}
+svg > path:nth-child(2) {
+	fill: var(--contact-page-dark);
+}

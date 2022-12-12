@@ -1,0 +1,7 @@
+/* Bleu */
+svg > path:nth-child(1) {
+	fill: var(--portfolio-page-light);
+}
+svg > path:nth-child(2) {
+	fill: var(--portfolio-page-dark);
+}

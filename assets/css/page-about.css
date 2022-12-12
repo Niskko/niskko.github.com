@@ -1,0 +1,7 @@
+/* vert */
+svg > path:nth-child(1) {
+	fill: var(--about-page-light);
+}
+svg > path:nth-child(2) {
+	fill: var(--about-page-dark);
+}

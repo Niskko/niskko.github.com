@@ -9,6 +9,10 @@
 	user-select: none;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 :root {
 	--main-color: white;
 	--main-bg-color: #1a1a1a;
@@ -16,6 +20,12 @@
 	--gradient-pink: rgba(168, 18, 74, 1);
 	--gradient-aqua: rgba(0, 177, 177, 1);
 	--gradient-blue: rgba(0, 135, 177, 1);
+	--contact-page-light: rgb(175, 140, 140);
+	--contact-page-dark: rgb(147, 94, 94);
+	--portfolio-page-light: rgb(140, 166, 175);
+	--portfolio-page-dark: rgb(94, 109, 147);
+	--about-page-light: rgb(150, 175, 140);
+	--about-page-dark: rgb(94, 147, 111);
 }
 
 @font-face {
@@ -77,7 +87,7 @@ p {
 
 nav {
 	display: flex;
-	height: 5vh;
+	height: 4vh;
 	width: 100%;
 	position: fixed;
 	justify-content: center;
@@ -86,7 +96,7 @@ nav {
 }
 nav div {
 	display: flex;
-	width: 40vw;
+	width: 40%;
 	justify-content: space-around;
 	align-items: center;
 	background-color: rgba(220, 220, 220, 0.8);
@@ -100,14 +110,15 @@ nav div a {
 	align-items: center;
 	justify-content: center;
 	height: 90%;
-	width: 9vh;
+	font-size: 1vw;
 	padding-left: 5%;
 	padding-right: 5%;
 	border-radius: 12px;
 	font-family: 'Reggae One';
 }
 
-nav div a:hover {
+nav div a:hover,
+#selected {
 	background: linear-gradient(
 		60deg,
 		var(--gradient-purple) 0%,
@@ -120,10 +131,10 @@ nav div a:hover {
 	display: none;
 }
 
-.notmove {
+/* .notmove {
 	transform: translateY(-200px);
 	transition: transform 0.3s;
-}
+} */
 
 li {
 	list-style: none;

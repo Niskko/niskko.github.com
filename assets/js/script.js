@@ -7,15 +7,6 @@
 	}
 	window.onmousemove = navigation;
 
-	const arrow = document.getElementsByClassName('arrow-container')[0];
-	arrow.href = '#';
-	arrow.addEventListener('click', () => {
-		window.scrollTo({
-			top: window.innerHeight,
-			behavior: 'smooth',
-		});
-	});
-
 	// window.addEventListener("wheel", (e) => {
 	//   console.log("wheel");
 	//   if (e.deltaY > 0) {
@@ -89,6 +80,19 @@
 			console.log('prec');
 		}
 	});
+
+	const navbar = document.querySelectorAll('nav div a');
+
+	for (let ind = 0; ind < navbar.length; ind++) {
+		console.log(navbar[ind].href.split('/')[3].split('.')[0]);
+		console.log(window.location.pathname.split('/')[1].split('.')[0]);
+		if (
+			navbar[ind].href.split('/')[3].split('.')[0] ==
+			window.location.pathname.split('/')[1].split('.')[0]
+		) {
+			navbar[ind].id = 'selected';
+		}
+	}
 
 	var keys = [];
 	window.addEventListener('keypress', (e) => {
