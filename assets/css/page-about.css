@@ -5,3 +5,13 @@ svg > path:nth-child(1) {
 svg > path:nth-child(2) {
 	fill: var(--about-page-dark);
 }
+
+nav div a:hover,
+#selected {
+	background: linear-gradient(
+		60deg,
+		var(--about-page-dark) 70%,
+		var(--about-page-light) 100%
+	);
+	color: white;
+}

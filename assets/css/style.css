@@ -121,8 +121,8 @@ nav div a:hover,
 #selected {
 	background: linear-gradient(
 		60deg,
-		var(--gradient-purple) 0%,
-		var(--gradient-pink) 100%
+		var(--gradient-pink) 70%,
+		var(--gradient-purple) 100%
 	);
 	color: white;
 }
