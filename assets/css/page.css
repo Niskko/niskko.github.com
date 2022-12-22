@@ -54,13 +54,13 @@ nav div {
 
 /* Waves */
 .waves {
-	/* top: 0;
+	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	display: block; */
+	display: block;
 	min-width: 100%;
-	/* min-height: 70%; */
+	min-height: 70%;
 	margin: auto;
 }
 
@@ -183,5 +183,11 @@ g > path:nth-of-type(2) {
 		-ms-transform: translateX(-20px);
 		-o-transform: translateX(-20px);
 		transform: translateX(-20px);
+	}
+}
+
+@media (max-width: 768px) {
+	.waves-header {
+		height: 40vh;
 	}
 }

@@ -1,16 +1,26 @@
 * {
 	margin: 0;
 	padding: 0;
-	-webkit-user-select: none;
+	/* -webkit-user-select: none;
 	-webkit-touch-callout: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	-khtml-user-select: none;
-	user-select: none;
+	user-select: none; */
 }
 
-html {
-	scroll-behavior: smooth;
+body {
+	background: linear-gradient(60deg, #b5b5b5 0%, #e5f1ff 100%);
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	padding: 10vh 10vw 0px 10vw;
+	width: 80vw;
+	height: 100vh;
 }
 
 :root {
@@ -22,10 +32,13 @@ html {
 	--gradient-blue: rgba(0, 135, 177, 1);
 	--contact-page-light: rgb(175, 140, 140);
 	--contact-page-dark: rgb(147, 94, 94);
+	--contact-page-dark2: rgb(117, 63, 63);
 	--portfolio-page-light: rgb(140, 166, 175);
 	--portfolio-page-dark: rgb(94, 109, 147);
+	--portfolio-page-dark2: rgb(63, 78, 117);
 	--about-page-light: rgb(150, 175, 140);
 	--about-page-dark: rgb(94, 147, 111);
+	--about-page-dark2: rgb(63, 117, 83);
 }
 
 @font-face {
@@ -68,21 +81,32 @@ html {
 	height: 85vh;
 }
 
-.inner-header h1 {
+h1 {
 	font-family: 'Marker';
 	letter-spacing: 0.5vw;
-	font-size: 10vw;
+	font-size: 10rem;
 }
 
 h2 {
 	font-family: 'Reggae One';
-	font-size: 3vw;
+	font-size: 3rem;
+}
+
+h3 {
+	font-family: 'Reggae One';
+	font-size: 1.6rem;
+}
+
+h4 {
+	font-family: 'Reggae One';
+	font-size: 1.2rem;
 }
 
 p {
 	font-family: 'Reggae One';
 	letter-spacing: 0.1vw;
 	color: #333333;
+	font-size: 1rem;
 }
 
 nav {
@@ -127,10 +151,6 @@ nav div a:hover,
 	color: white;
 }
 
-::-webkit-scrollbar {
-	display: none;
-}
-
 /* .notmove {
 	transform: translateY(-200px);
 	transition: transform 0.3s;
@@ -151,7 +171,11 @@ li {
 }
 
 .inner-header {
-	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	padding-top: 10vh;
+	align-items: center;
+	height: 60vh;
 	width: 100%;
 }
 
@@ -194,17 +218,6 @@ li {
 	visibility: visible;
 	transform: scale(1);
 	transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
-
-.center {
-	/*Flexbox for containers*/
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.flex-column {
-	display: flex;
-	flex-direction: column;
 }
 
 /* Arrow */
@@ -278,9 +291,6 @@ li {
 	}
 	.inner-header {
 		height: 85vh;
-	}
-	.content {
-		height: 10vh;
 	}
 	.snowflakes {
 		display: none;

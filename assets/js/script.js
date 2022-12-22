@@ -107,18 +107,18 @@
 	}
 
 	var timeout;
-	function navigation() {
-		clearTimeout(timeout);
-		if (window.innerHeight == screen.height) {
-			nav.classList.add('notmove');
-			body.style.cursor = 'none';
-		} else {
-			nav.classList.remove('notmove');
-			body.style.cursor = 'default';
-			timeout = setTimeout(function () {
-				nav.classList.add('notmove');
-				body.style.cursor = 'none';
-			}, 3000);
-		}
-	}
+	// function navigation() {
+	// 	clearTimeout(timeout);
+	// 	if (window.innerHeight == screen.height) {
+	// 		nav.classList.add('notmove');
+	// 		body.style.cursor = 'none';
+	// 	} else {
+	// 		nav.classList.remove('notmove');
+	// 		body.style.cursor = 'default';
+	// 		timeout = setTimeout(function () {
+	// 			nav.classList.add('notmove');
+	// 			body.style.cursor = 'none';
+	// 		}, 3000);
+	// 	}
+	// }
 })();

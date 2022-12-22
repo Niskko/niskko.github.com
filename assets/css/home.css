@@ -7,11 +7,13 @@
 	max-height: 150px;
 }
 
-.content {
+.text-between {
+	display: flex;
 	position: static;
-	height: 20vh;
-	text-align: center;
+	height: 10vw;
 	background-color: var(--main-color);
+	justify-content: center;
+	align-items: center;
 }
 
 #waves2 {
@@ -45,5 +47,17 @@
 	}
 	100% {
 		transform: translate3d(85px, 0, 0);
+	}
+}
+
+@media (max-width: 768px) {
+	.waves {
+		height: 0.2vh;
+	}
+	.inner-header {
+		height: 30vh;
+	}
+	.text-between {
+		height: 10vh;
 	}
 }
