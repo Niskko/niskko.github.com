@@ -1,173 +1,171 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="icon" href="Application.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/snow.css" />
-    <link rel="stylesheet" href="assets/css/loader.css" />
-    <link rel="stylesheet" href="assets/css/home.css">
-    <script src="assets/js/loader.js"></script>
-    <title>Accueil</title>
-  </head>
-  <body>
-    <header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" href="Application.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="assets/css/loader.css" />
+		<link rel="stylesheet" href="assets/css/modal.css" />
+		<link rel="stylesheet" href="assets/css/home.css" />
+		<link rel="stylesheet" href="assets/css/snow.css" />
+		<script src="assets/js/loader.js"></script>
+		<title>Accueil</title>
+	</head>
+	<body>
+		<header>
+			<!-- Loader -->
+			<div class="loader">
+				<div class="container">
+					<svg
+						class="svgloader"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 340 340"
+					>
+						<circle cx="170" cy="170" r="160" stroke="white" />
+						<circle cx="170" cy="170" r="135" stroke="purple" />
+						<circle cx="170" cy="170" r="110" stroke="white" />
+						<circle cx="170" cy="170" r="85" stroke="purple" />
+						<circle cx="170" cy="170" r="60" stroke="white" />
+					</svg>
+					<h1>Chargement...</h1>
+				</div>
+			</div>
+			<!-- end Loader -->
 
-      <!-- Loader -->
-      <div class="loader">
-        <div class="container">
-          <svg
-            class="svgloader"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 340 340"
-          >
-            <circle cx="170" cy="170" r="160" stroke="white" />
-            <circle cx="170" cy="170" r="135" stroke="purple" />
-            <circle cx="170" cy="170" r="110" stroke="white" />
-            <circle cx="170" cy="170" r="85" stroke="purple" />
-            <circle cx="170" cy="170" r="60" stroke="white" />
-          </svg>
-          <h1>Chargement...</h1>
-        </div>
-      </div>
-      <!-- end Loader -->
+			<!-- Nav -->
+			<nav>
+				<div>
+					<a id="selected" href="./index.html">Accueil</a>
+					<a href="./about.html">Á propos</a>
+					<a href="./contact.html">Contact</a>
+					<a href="./portfolio.html">Portfolio</a>
+				</div>
+			</nav>
+			<!-- end Nav -->
+		</header>
 
-      <!-- Modal -->
-      <div class="modal">
-        <div class="modal-content">
-          <span class="close-button">&times;</span>
-          <h4>Ceci est un Modal</h2>
-          <button class="button-modal ok">Ok</button>
-          <button class="button-modal cancel">Annuler</button>
-        </div>
-      </div>
-      <!-- end Modal -->
+		<!-- Top page -->
+		<div class="top-page">
+			<!-- Title -->
+			<div class="inner-header">
+				<h1>Loïc PUPIER</h1>
+				<h2>Web Developer</h2>
+				<a href="#test" class="arrow-container">
+					<div class="arrow"></div>
+					<div class="arrow"></div>
+					<div class="arrow"></div>
+				</a>
+			</div>
+			<!-- end Title -->
 
-      <!-- Nav -->
-      <nav>
-        <div>
-          <a id="selected"href="./index.html">Accueil</a>
-          <a href="./about.html">Á propos</a>
-          <a href="./contact.html">Contact</a>
-          <a href="./portfolio.html">Portfolio</a>
-        </div>
-      </nav>
-      <!-- end Nav -->
+			<button id="myBtn">modal</button>
 
-    </header>
+			<!-- top Waves -->
+			<div id="waves">
+				<svg
+					class="waves"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					viewBox="0 24 150 28"
+					preserveAspectRatio="none"
+					shape-rendering="auto"
+				>
+					<defs>
+						<path
+							id="gentle-wave"
+							d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+						/>
+					</defs>
+					<g class="parallax">
+						<use
+							xlink:href="#gentle-wave"
+							x="48"
+							y="0"
+							fill="rgba(255,255,255,0.7"
+						/>
+						<use
+							xlink:href="#gentle-wave"
+							x="48"
+							y="3"
+							fill="rgba(255,255,255,0.5)"
+						/>
+						<use
+							xlink:href="#gentle-wave"
+							x="48"
+							y="5"
+							fill="rgba(255,255,255,0.3)"
+						/>
+						<use
+							xlink:href="#gentle-wave"
+							x="48"
+							y="7"
+							fill="#fff"
+						/>
+					</g>
+				</svg>
+			</div>
+			<!-- end top Waves -->
+		</div>
+		<!-- end Top page -->
 
-    <!-- Top page -->
-    <div class="top-page">
-      <!-- Title -->
-      <div class="inner-header">
-        <h1>Loïc PUPIER</h1>
-        <h2>Web Developer</h2>
-        <a href="#test" class="arrow-container">
-          <div class="arrow"></div>
-          <div class="arrow"></div>
-          <div class="arrow"></div>  
-        </a>        
-      </div>
-      <!-- end Title -->
+		<!-- middle-Waves -->
+		<div id="test" class="text-between">
+			<p>By Loïc PUPIER</p>
+		</div>
+		<!-- end middle-Waves -->
 
-      <!-- <button class="example">modal</button> -->
+		<div class="bottom-page">
+			<!-- bottom Waves -->
+			<div id="waves2">
+				<svg
+					class="waves"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					viewBox="0 24 150 28"
+					preserveAspectRatio="none"
+					shape-rendering="auto"
+				>
+					<defs>
+						<path
+							id="gentle-wave"
+							d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+						/>
+					</defs>
+					<g class="parallax">
+						<use
+							xlink:href="#gentle-wave"
+							x="48"
+							y="0"
+							fill="rgba(255,255,255,0.7"
+						/>
+						<use
+							xlink:href="#gentle-wave"
+							x="48"
+							y="3"
+							fill="rgba(255,255,255,0.5)"
+						/>
+						<use
+							xlink:href="#gentle-wave"
+							x="48"
+							y="5"
+							fill="rgba(255,255,255,0.3)"
+						/>
+						<use
+							xlink:href="#gentle-wave"
+							x="48"
+							y="7"
+							fill="#fff"
+						/>
+					</g>
+				</svg>
+			</div>
+			<!-- end bottom Waves-->
+		</div>
 
-      <!-- top Waves -->
-      <div id="waves">
-        <svg
-          class="waves"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 24 150 28"
-          preserveAspectRatio="none"
-          shape-rendering="auto"
-        >
-          <defs>
-            <path
-              id="gentle-wave"
-              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-            />
-          </defs>
-          <g class="parallax">
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="0"
-              fill="rgba(255,255,255,0.7"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="3"
-              fill="rgba(255,255,255,0.5)"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="5"
-              fill="rgba(255,255,255,0.3)"
-            />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-          </g>
-        </svg>
-      </div>
-      <!-- end top Waves -->
-    </div>
-    <!-- end Top page -->
-
-    <!-- middle-Waves -->
-    <div id="test" class="text-between">
-      <p>By Loïc PUPIER</p>
-    </div>  
-    <!-- end middle-Waves -->
-
-    <div class="bottom-page">
-      <!-- bottom Waves -->
-      <div id="waves2">
-        <svg
-          class="waves"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 24 150 28"
-          preserveAspectRatio="none"
-          shape-rendering="auto"
-        >
-          <defs>
-            <path
-              id="gentle-wave"
-              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-            />
-          </defs>
-          <g class="parallax">
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="0"
-              fill="rgba(255,255,255,0.7"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="3"
-              fill="rgba(255,255,255,0.5)"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="5"
-              fill="rgba(255,255,255,0.3)"
-            />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-          </g>
-        </svg>
-      </div>
-      <!-- end bottom Waves-->
-    </div>
-
-    <!-- Script -->
-    <script src="assets/js/script.js" defer></script>
-    <script src="assets/js/modal.js" defer></script>
-  </body>
+		<!-- Script -->
+		<script src="assets/js/script.js" defer></script>
+		<script src="assets/js/modal.js" defer></script>
+	</body>
 </html>

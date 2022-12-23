@@ -1,74 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="icon" href="Application.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/snow.css" />
-    <link rel="stylesheet" href="assets/css/loader.css" />
-    <link rel="stylesheet" href="assets/css/page.css">
-    <link rel="stylesheet" href="assets/css/page-about.css">
-    <script src="assets/js/loader.js"></script>
-    <title>About</title>
-  </head>
-  <body>
-    <header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" href="Application.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="assets/css/loader.css" />
+		<link rel="stylesheet" href="assets/css/modal.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="assets/css/page.css" />
+		<link rel="stylesheet" href="assets/css/page-about.css" />
+		<link rel="stylesheet" href="assets/css/snow.css" />
+		<script src="assets/js/loader.js"></script>
+		<title>About</title>
+	</head>
+	<body>
+		<header>
+			<!-- Loader -->
+			<div class="loader">
+				<div class="container">
+					<svg
+						class="svgloader"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 340 340"
+					>
+						<circle cx="170" cy="170" r="160" stroke="white" />
+						<circle cx="170" cy="170" r="135" stroke="purple" />
+						<circle cx="170" cy="170" r="110" stroke="white" />
+						<circle cx="170" cy="170" r="85" stroke="purple" />
+						<circle cx="170" cy="170" r="60" stroke="white" />
+					</svg>
+					<h1>Chargement...</h1>
+				</div>
+			</div>
+			<!-- end Loader -->
 
-      <!-- Loader -->
-      <div class="loader">
-        <div class="container">
-          <svg
-            class="svgloader"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 340 340"
-          >
-            <circle cx="170" cy="170" r="160" stroke="white" />
-            <circle cx="170" cy="170" r="135" stroke="purple" />
-            <circle cx="170" cy="170" r="110" stroke="white" />
-            <circle cx="170" cy="170" r="85" stroke="purple" />
-            <circle cx="170" cy="170" r="60" stroke="white" />
-          </svg>
-          <h1>Chargement...</h1>
-        </div>
-      </div>
-      <!-- end Loader -->
+			<!-- Modal -->
+			<div id="myModal" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close">&times;</span>
+						<h2>Modal Header</h2>
+					</div>
+					<div class="modal-body">
+						<p>Some text in the Modal Body</p>
+						<p>Some other text...</p>
+					</div>
+					<div class="modal-footer">
+						<h3>Modal Footer</h3>
+					</div>
+				</div>
+			</div>
+			<!-- end Modal -->
 
-      <!-- Modal -->
-      <div class="modal">
-        <div class="modal-content">
-          <span class="close-button">&times;</span>
-          <h4>Ceci est un Modal</h2>
-          <button class="button-modal ok">Ok</button>
-          <button class="button-modal cancel">Annuler</button>
-        </div>
-      </div>
-      <!-- end Modal -->
+			<!-- Nav -->
+			<nav>
+				<div>
+					<a href="./index.html">Accueil</a>
+					<a id="selected" href="./about.html">Á propos</a>
+					<a href="./contact.html">Contact</a>
+					<a href="./portfolio.html">Portfolio</a>
+				</div>
+			</nav>
+			<!-- end Nav -->
+		</header>
 
-      <!-- Nav -->
-      <nav>
-        <div>
-          <a href="./index.html">Accueil</a>
-          <a id="selected" href="./about.html">Á propos</a>
-          <a href="./contact.html">Contact</a>
-          <a href="./portfolio.html">Portfolio</a>
-        </div>
-      </nav>
-      <!-- end Nav -->
-    </header>
-
-    <!-- title -->
-    <div class="waves-header">
+		<!-- title -->
+		<div class="waves-header">
 			<div class="waves-text">
 				<h1>Á propos de moi</h1>
 				<p>Présentation de mes projets et compétences</p>
 			</div>
-      <a href="#test" class="arrow-container">
-        <div class="arrow"></div>
-        <div class="arrow"></div>
-        <div class="arrow"></div>  
-      </a>   
+			<a href="#test" class="arrow-container">
+				<div class="arrow"></div>
+				<div class="arrow"></div>
+				<div class="arrow"></div>
+			</a>
 			<svg
 				class="waves"
 				xmlns="http://www.w3.org/2000/svg"
@@ -101,10 +108,10 @@
 				<!-- fin trait -->
 			</svg>
 		</div>
-    <!-- end title -->
+		<!-- end title -->
 
-    <!-- Script -->
-    <script src="assets/js/script.js" defer></script>
-    <script src="assets/js/modal.js" defer></script>
-  </body>
+		<!-- Script -->
+		<script src="assets/js/script.js" defer></script>
+		<script src="assets/js/modal.js" defer></script>
+	</body>
 </html>

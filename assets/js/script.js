@@ -7,21 +7,6 @@
 	}
 	window.onmousemove = navigation;
 
-	// window.addEventListener("wheel", (e) => {
-	//   console.log("wheel");
-	//   if (e.deltaY > 0) {
-	//     window.scrollTo({
-	//       top: window.innerHeight,
-	//       behavior: "smooth",
-	//     });
-	//   } else {
-	//     window.scrollTo({
-	//       top: -window.innerHeight,
-	//       behavior: "smooth",
-	//     });
-	//   }
-	// });
-
 	function addRainDecoration(content) {
 		let newDiv = document.createElement('div');
 		newDiv.classList.add('snowflakes');
@@ -107,18 +92,18 @@
 	}
 
 	var timeout;
-	// function navigation() {
-	// 	clearTimeout(timeout);
-	// 	if (window.innerHeight == screen.height) {
-	// 		nav.classList.add('notmove');
-	// 		body.style.cursor = 'none';
-	// 	} else {
-	// 		nav.classList.remove('notmove');
-	// 		body.style.cursor = 'default';
-	// 		timeout = setTimeout(function () {
-	// 			nav.classList.add('notmove');
-	// 			body.style.cursor = 'none';
-	// 		}, 3000);
-	// 	}
-	// }
+	function navigation() {
+		clearTimeout(timeout);
+		if (window.innerHeight == screen.height) {
+			nav.classList.add('notmove');
+			body.style.cursor = 'none';
+		} else {
+			nav.classList.remove('notmove');
+			body.style.cursor = 'default';
+			timeout = setTimeout(function () {
+				nav.classList.add('notmove');
+				body.style.cursor = 'none';
+			}, 3000);
+		}
+	}
 })();
