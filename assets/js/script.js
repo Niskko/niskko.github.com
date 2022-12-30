@@ -1,3 +1,5 @@
+import { ConfirmModal, ErrorModal, SuccessModal, InfoModal } from './modal.js';
+
 (function () {
 	const nav = document.getElementsByTagName('nav')[0];
 	const body = document.getElementsByTagName('body')[0];
@@ -61,11 +63,13 @@
 		// );
 		// var newSuccessModal = new SuccessModal(
 		// 	'Inscription réussie',
-		// 	'Nous vous souhaitons la bienvenue sur notre site !'
+		// 	'Nous vous souhaitons la bienvenue sur notre site !',
+		// 	3
 		// );
 		// var newInfoModal = new InfoModal(
 		// 	'Maintenance en cours',
-		// 	'Le site est en maintenance, Veuillez attendre la fin du processus'
+		// 	'Le site est en maintenance, Veuillez attendre la fin du processus',
+		// 	3
 		// );
 	};
 

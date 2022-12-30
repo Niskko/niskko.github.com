@@ -1,5 +1,3 @@
-// Structure of modal
-
 /**
  * @param {string} header_title - Title of modal
  * @param {string} header_color - Color of title
@@ -17,11 +15,12 @@
  * @summary Create a modal
  *
  */
-class Modal {
+export class Modal {
 	static modal_header;
 	static modal_body;
 	static modal_footer;
 	static response;
+	static button = false;
 	constructor(
 		header_title,
 		text,
@@ -34,20 +33,22 @@ class Modal {
 		this.header_title = header_title;
 		this.text = text;
 		this.footer_text = footer_text;
-		this.time = time;
-		if (arguments.length > 6) {
-			this.messages = messages;
-		} else {
-			this.messages = null;
-		}
-		Modal.response = null;
 		this.modal_type = modal_type;
+		this.time = time;
+		this.messages = messages;
+		Modal.response = null;
 		this.modal_header = this.createModalHeader();
 		this.modal_body = this.createModalBody();
-		this.modal_footer = this.createModalFooter(messages);
+		this.modal_footer = this.createModalFooter(this.messages);
 		this.modal = this.createModal();
 		if (isShown) {
 			this.showModal();
+		}
+		if (this.messages.length > 0) {
+			this.modal_footer.childNodes[1].childNodes[0].focus(); //put the focus on the first button
+		} else {
+			console.log(this.modal_header.childNodes[0]);
+			this.modal_header.childNodes[0].focus(); //put the focus on the title
 		}
 		if (time != 'infinite') {
 			setTimeout(() => {
@@ -90,7 +91,7 @@ class Modal {
 		modal_header.classList.add('modal-header');
 		let modal_header_title = document.createElement('h2');
 		modal_header_title.innerHTML = this.header_title;
-		let modal_header_close = document.createElement('span');
+		let modal_header_close = document.createElement('button');
 		modal_header_close.classList.add('close-modal');
 		modal_header_close.innerHTML = '&times;';
 		modal_header.appendChild(modal_header_close);
@@ -111,31 +112,33 @@ class Modal {
 		return modal_body;
 	}
 
-	createModalFooter(messages) {
+	createModalFooter(messagess) {
 		var modal_footer = document.createElement('div');
 		modal_footer.classList.add('modal-footer');
 		let modal_footer_text = document.createElement('h3');
 		modal_footer_text.innerHTML = this.footer_text;
 		modal_footer.appendChild(modal_footer_text);
-		this.addButtons(modal_footer, messages);
+		if (this.messages.length > 0) {
+			this.addButtons(modal_footer);
+		}
 		return modal_footer;
 	}
 
-	addButtons(modal_footer, messages) {
+	addButtons(modal_footer) {
 		let modal_footer_buttons = document.createElement('div');
 		modal_footer_buttons.classList.add('modal-footer-buttons');
 		modal_footer.appendChild(modal_footer_buttons);
-		for (let i = 0; i < messages.length; i++) {
+		for (let i = 0; i < this.messages.length; i++) {
 			let modal_footer_button = document.createElement('button');
 			modal_footer_button.classList.add('modal-footer-button');
-			modal_footer_button.innerHTML = messages[i];
+			modal_footer_button.innerHTML = this.messages[i];
 			modal_footer_button.id = 'btnmodal-' + [i];
 			modal_footer_buttons.appendChild(modal_footer_button);
 			if ([i] == 0) {
 				modal_footer_button.focus();
 			}
 			modal_footer_button.addEventListener('click', () => {
-				Modal.response = messages[i];
+				Modal.response = this.messages[i];
 				this.closeModal();
 			});
 		}
@@ -159,7 +162,6 @@ class Modal {
 	showModal() {
 		this.modal.style.display = 'block';
 		document.body.style.overflow = 'hidden';
-		this.modal_footer.childNodes[1].childNodes[0].focus(); //put the focus on the first button
 	}
 	closeModal() {
 		if (Modal.response == null) {
@@ -172,7 +174,13 @@ class Modal {
 }
 
 // Example of modal
-class InfoModal extends Modal {
+
+/**
+ * @param {string} header_title text: can be null
+ * @param {string} text text: Can be null
+ * @param {string} time Not required: default is infinite
+ */
+export class InfoModal extends Modal {
 	constructor(header_title, text, time) {
 		if (time == null) time = 'infinite';
 		super(header_title, text, null, 'info-modal', time, true);
@@ -184,7 +192,7 @@ class InfoModal extends Modal {
  * @param {string} text text: Can be null
  * @param {string} time Not required: default is infinite
  */
-class ErrorModal extends Modal {
+export class ErrorModal extends Modal {
 	constructor(header_title, text, time) {
 		if (time == null) time = 'infinite';
 		super(header_title, text, null, 'error-modal', time, true);
@@ -196,7 +204,7 @@ class ErrorModal extends Modal {
  * @param {string} text text: Can be null
  * @param {string} time Not required: default is infinite
  */
-class SuccessModal extends Modal {
+export class SuccessModal extends Modal {
 	constructor(header_title, text, time) {
 		if (time == null) time = 'infinite';
 		super(header_title, text, null, 'success-modal', time, true);
@@ -209,7 +217,7 @@ class SuccessModal extends Modal {
  * @param {string} confirmText Confirm button text
  * @param {string} cancelText Cancel button text
  */
-class ConfirmModal extends Modal {
+export class ConfirmModal extends Modal {
 	constructor(header_title, text, confirmText, cancelText) {
 		super(
 			header_title,

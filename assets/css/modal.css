@@ -64,14 +64,19 @@
 
 /* Close Button */
 .close-modal {
+	display: flex;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: transparent;
+	width: 40px;
+	border: none;
+	justify-content: center;
+	align-content: center;
 	color: white;
 	float: right;
 	font-size: 2rem;
-	font-weight: bold;
 }
 
-.close-modal:hover,
-.close-modal:focus {
+.close-modal:hover {
 	color: lightcoral;
 	text-decoration: none;
 	cursor: pointer;
