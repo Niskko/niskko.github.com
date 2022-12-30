@@ -21,36 +21,38 @@ class Modal {
 	static modal_header;
 	static modal_body;
 	static modal_footer;
+	static response;
 	constructor(
 		header_title,
-		header_color,
-		header_background_color,
 		text,
 		footer_text,
-		footer_color,
-		footer_background_color,
+		modal_type,
 		time,
-		isShown
+		isShown,
+		...messages
 	) {
 		this.header_title = header_title;
-		this.header_color = header_color;
-		this.header_background_color = header_background_color;
 		this.text = text;
 		this.footer_text = footer_text;
-		this.footer_color = footer_color;
-		this.footer_background_color = footer_background_color;
 		this.time = time;
+		if (arguments.length > 6) {
+			this.messages = messages;
+		} else {
+			this.messages = null;
+		}
+		Modal.response = null;
+		this.modal_type = modal_type;
 		this.modal_header = this.createModalHeader();
 		this.modal_body = this.createModalBody();
-		this.modal_footer = this.createModalFooter();
+		this.modal_footer = this.createModalFooter(messages);
 		this.modal = this.createModal();
+		if (isShown) {
+			this.showModal();
+		}
 		if (time != 'infinite') {
 			setTimeout(() => {
 				this.closeModal();
 			}, time * 1000);
-		}
-		if (isShown) {
-			this.showModal();
 		}
 	}
 
@@ -58,6 +60,9 @@ class Modal {
 		// Modal
 		let modal = document.createElement('div');
 		modal.classList.add('modal');
+		if (this.modal_type != null) {
+			modal.classList.add(this.modal_type);
+		}
 		modal.style.display = 'none';
 		modal.id = 'myModal';
 
@@ -72,6 +77,7 @@ class Modal {
 		modal.appendChild(modal_content);
 		modal.addEventListener('click', (event) => {
 			if (event.target == modal) {
+				Modal.response = 'Cancel';
 				this.closeModal();
 			}
 		});
@@ -81,18 +87,16 @@ class Modal {
 
 	createModalHeader() {
 		let modal_header = document.createElement('div');
-		modal_header.style.color = this.header_color;
-		modal_header.style.backgroundColor = this.header_background_color;
 		modal_header.classList.add('modal-header');
 		let modal_header_title = document.createElement('h2');
 		modal_header_title.innerHTML = this.header_title;
-		modal_header_title.style.color = this.header_color;
 		let modal_header_close = document.createElement('span');
-		modal_header_close.classList.add('close');
+		modal_header_close.classList.add('close-modal');
 		modal_header_close.innerHTML = '&times;';
 		modal_header.appendChild(modal_header_close);
 		modal_header.appendChild(modal_header_title);
 		modal_header_close.addEventListener('click', () => {
+			Modal.response = 'Cancel';
 			this.closeModal();
 		});
 		return modal_header;
@@ -107,16 +111,34 @@ class Modal {
 		return modal_body;
 	}
 
-	createModalFooter() {
-		let modal_footer = document.createElement('div');
-		modal_footer.style.color = this.footer_color;
-		modal_footer.style.backgroundColor = this.footer_background_color;
+	createModalFooter(messages) {
+		var modal_footer = document.createElement('div');
 		modal_footer.classList.add('modal-footer');
 		let modal_footer_text = document.createElement('h3');
 		modal_footer_text.innerHTML = this.footer_text;
-		modal_footer_text.style.color = this.footer_color;
 		modal_footer.appendChild(modal_footer_text);
+		this.addButtons(modal_footer, messages);
 		return modal_footer;
+	}
+
+	addButtons(modal_footer, messages) {
+		let modal_footer_buttons = document.createElement('div');
+		modal_footer_buttons.classList.add('modal-footer-buttons');
+		modal_footer.appendChild(modal_footer_buttons);
+		for (let i = 0; i < messages.length; i++) {
+			let modal_footer_button = document.createElement('button');
+			modal_footer_button.classList.add('modal-footer-button');
+			modal_footer_button.innerHTML = messages[i];
+			modal_footer_button.id = 'btnmodal-' + [i];
+			modal_footer_buttons.appendChild(modal_footer_button);
+			if ([i] == 0) {
+				modal_footer_button.focus();
+			}
+			modal_footer_button.addEventListener('click', () => {
+				Modal.response = messages[i];
+				this.closeModal();
+			});
+		}
 	}
 
 	get Modal_header() {
@@ -130,175 +152,74 @@ class Modal {
 		return this.modal_footer;
 	}
 
+	get response() {
+		return Modal.response;
+	}
+
 	showModal() {
 		this.modal.style.display = 'block';
 		document.body.style.overflow = 'hidden';
+		this.modal_footer.childNodes[1].childNodes[0].focus(); //put the focus on the first button
 	}
 	closeModal() {
+		if (Modal.response == null) {
+			Modal.response = 'Cancel';
+		}
 		this.modal.style.display = 'none';
 		document.body.style.overflow = 'auto';
 		this.modal.remove();
 	}
 }
 
-class ButtonModal extends Modal {
-	constructor(
-		header_title,
-		header_color,
-		header_background_color,
-		text,
-		footer_text,
-		footer_color,
-		footer_background_color,
-		time,
-		isShown,
-		button_color,
-		button_background_color,
-		button_hover_background_color,
-		...messages
-	) {
-		super(
-			header_title,
-			header_color,
-			header_background_color,
-			text,
-			footer_text,
-			footer_color,
-			footer_background_color,
-			time,
-			isShown
-		);
-		this.button_color = button_color;
-		this.button_background_color = button_background_color;
-		this.button_hover_background_color = button_hover_background_color;
-		this.messages = messages;
-		this.addButtons(messages);
-	}
-
-	addButtons(messages) {
-		let modal_footer_buttons = document.createElement('div');
-		modal_footer_buttons.classList.add('modal-footer-buttons');
-		super.Modal_footer.appendChild(modal_footer_buttons);
-		for (let i = 0; i < messages.length; i++) {
-			let modal_footer_button = document.createElement('button');
-			modal_footer_button.style.color = this.button_color;
-			modal_footer_button.style.backgroundColor =
-				this.button_background_color;
-			modal_footer_button.addEventListener('mouseover', () => {
-				modal_footer_button.style.backgroundColor =
-					this.button_hover_background_color;
-			});
-			modal_footer_button.addEventListener('mouseout', () => {
-				modal_footer_button.style.backgroundColor =
-					this.button_background_color;
-			});
-			modal_footer_button.classList.add('modal-footer-button');
-			modal_footer_button.innerHTML = messages[i];
-			modal_footer_button.id = 'btnmodal-' + [i];
-			modal_footer_buttons.appendChild(modal_footer_button);
-			modal_footer_button.addEventListener('click', () => {
-				this.closeModal();
-			});
-		}
-	}
-}
-
 // Example of modal
 class InfoModal extends Modal {
-	constructor(header_title, text) {
-		super(
-			header_title,
-			'white',
-			'blue',
-			text,
-			'',
-			'',
-			'blue',
-			'infinite',
-			true
-		);
+	constructor(header_title, text, time) {
+		if (time == null) time = 'infinite';
+		super(header_title, text, null, 'info-modal', time, true);
 	}
 }
 
+/**
+ * @param {string} header_title text: can be null
+ * @param {string} text text: Can be null
+ * @param {string} time Not required: default is infinite
+ */
 class ErrorModal extends Modal {
-	constructor(header_title, text) {
-		super(
-			header_title,
-			'white',
-			'red',
-			text,
-			'',
-			'',
-			'red',
-			'infinite',
-			true
-		);
+	constructor(header_title, text, time) {
+		if (time == null) time = 'infinite';
+		super(header_title, text, null, 'error-modal', time, true);
 	}
 }
 
+/**
+ * @param {string} header_title text: can be null
+ * @param {string} text text: Can be null
+ * @param {string} time Not required: default is infinite
+ */
 class SuccessModal extends Modal {
-	constructor(header_title, text) {
-		super(
-			header_title,
-			'white',
-			'green',
-			text,
-			'',
-			'',
-			'green',
-			'infinite',
-			true
-		);
+	constructor(header_title, text, time) {
+		if (time == null) time = 'infinite';
+		super(header_title, text, null, 'success-modal', time, true);
 	}
 }
 
-class ConfirmModal extends ButtonModal {
-	constructor(header_title, text) {
+/**
+ * @param {string} header_title text: can be null
+ * @param {string} text text: Can be null
+ * @param {string} confirmText Confirm button text
+ * @param {string} cancelText Cancel button text
+ */
+class ConfirmModal extends Modal {
+	constructor(header_title, text, confirmText, cancelText) {
 		super(
 			header_title,
-			'white',
-			'#1d95d1',
 			text,
-			'',
-			'',
-			'white',
+			null,
+			'confirm-modal',
 			'infinite',
 			true,
-			'white',
-			'grey',
-			'darkgrey',
-			'Confirmer',
-			'Annuler'
+			confirmText,
+			cancelText
 		);
 	}
 }
-
-var btn = document.getElementById('myBtn');
-btn.onclick = function () {
-	// var newErrorModal = new ErrorModal(
-	// 	'⚠ - Error',
-	// 	"L'accès à la base de donnée est impossible actuellement, veuillez réessayer plus tard !"
-	// );
-	// var newSuccessModal = new SuccessModal(
-	// 	'Inscription réussie',
-	// 	'Nous vous souhaitons la bienvenue sur notre site !'
-	// );
-	// var newInfoModal = new InfoModal(
-	// 	'Maintenance en cours',
-	// 	'Le site est en maintenance, Veuillez attendre la fin du processus'
-	// );
-	// var newConfirmModal = new ConfirmModal(
-	// 	'Veuillez confirmer',
-	// 	'Confirmer svp'
-	// );
-	var newConfirmModal2 = new ConfirmModal(
-		'Etes vous sûr de vouloir passez en plein écran ?',
-		''
-	);
-	// let confirmbutton = document.querySelector('#btnmodal-0');
-	// confirmbutton.addEventListener('click', function () {
-	// 	console.log('ouais');
-	// });
-};
-
-// Todo: Transformer le système pour créer des classes CSS par type de modal

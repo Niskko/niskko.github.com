@@ -1,18 +1,17 @@
-/* The Modal (background) */
+/* Modal bases */
 .modal {
-	position: fixed; /* Stay in place */
-	z-index: 10; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
+	position: fixed;
+	z-index: 10;
+	padding-top: 100px;
 	left: 0;
 	top: 0;
-	width: 100vw; /* Full width */
-	height: 100vh; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0, 0, 0); /* Fallback color */
-	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content */
 .modal-content {
 	position: relative;
 	background-color: #fefefe;
@@ -28,16 +27,19 @@
 }
 
 .modal-content h2 {
-	font-size: 1.5rem;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 2rem;
 }
 .modal-content h3 {
-	font-size: 1.2rem;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.5rem;
 }
 .modal-content p {
-	font-size: 0.8rem;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2rem;
 }
 
-/* Add Animation */
+/* Animations */
 @-webkit-keyframes animatetop {
 	from {
 		top: -300px;
@@ -60,32 +62,33 @@
 	}
 }
 
-/* The Close Button */
-.close {
+/* Close Button */
+.close-modal {
 	color: white;
 	float: right;
-	font-size: 28px;
+	font-size: 2rem;
 	font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-	color: gray;
+.close-modal:hover,
+.close-modal:focus {
+	color: lightcoral;
 	text-decoration: none;
 	cursor: pointer;
 }
 
+/* Modal parts */
 .modal-header {
 	padding: 2px 16px;
 }
 
 .modal-body {
-	/* margin: 2px 16px; */
+	margin: 10px 16px;
 	text-align: center;
 }
 
 .modal-footer {
-	padding: 2px 16px;
+	padding: 10px 16px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -101,5 +104,62 @@
 	font-size: 1rem;
 	margin: 2px 2px;
 	cursor: pointer;
-	border-radius: 15px;
+	border-radius: 5px;
+}
+
+/* Confirm Modal */
+
+.confirm-modal {
+	color: white;
+}
+
+.confirm-modal .modal-header {
+	background-color: cadetblue;
+}
+
+.confirm-modal .modal-footer {
+	background-color: white;
+}
+
+.confirm-modal .modal-footer-button:nth-child(1) {
+	background-color: lightgreen;
+}
+
+.confirm-modal .modal-footer-button:nth-child(1):hover {
+	box-shadow: 0px 0px 10px 0px greenyellow;
+}
+
+.confirm-modal .modal-footer-button:nth-child(2) {
+	background-color: lightcoral;
+}
+
+.confirm-modal .modal-footer-button:nth-child(2):hover {
+	box-shadow: 0px 0px 10px 0px salmon;
+}
+
+/* Error Modal */
+.error-modal {
+	color: white;
+}
+
+.error-modal .modal-header {
+	background-color: crimson;
+}
+
+/* Success Modal */
+.success-modal {
+	color: white;
+}
+
+.success-modal .modal-header {
+	background-color: lime;
+}
+
+/* Info Modal */
+.info-modal {
+	color: white;
+}
+
+.info-modal .modal-header {
+	background-color: #1d95d1;
 }

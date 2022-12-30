@@ -42,6 +42,33 @@
 		}
 	});
 
+	var btn = document.getElementById('myBtn');
+	btn.onclick = function () {
+		var newConfirmModal2 = new ConfirmModal(
+			'Etes vous sûr de vouloir passez en plein écran ?',
+			null,
+			'Confirmer',
+			'Annuler'
+		);
+		let confirmButton = document.querySelector('#btnmodal-0');
+		confirmButton.addEventListener('click', function () {
+			console.log('Confirm');
+		});
+		// var newErrorModal = new ErrorModal(
+		// 	'⚠ - Error',
+		// 	"L'accès à la base de donnée est impossible actuellement, veuillez réessayer plus tard !",
+		// 	3
+		// );
+		// var newSuccessModal = new SuccessModal(
+		// 	'Inscription réussie',
+		// 	'Nous vous souhaitons la bienvenue sur notre site !'
+		// );
+		// var newInfoModal = new InfoModal(
+		// 	'Maintenance en cours',
+		// 	'Le site est en maintenance, Veuillez attendre la fin du processus'
+		// );
+	};
+
 	function turnFullscreen() {
 		if (window.innerHeight == screen.height) {
 			document.exitFullscreen();
