@@ -6,6 +6,9 @@
 	min-height: 100px;
 	max-height: 150px;
 }
+h1 {
+	font-family: 'Marker';
+}
 
 .text-between {
 	display: flex;

@@ -6,7 +6,7 @@ svg > path:nth-child(2) {
 	fill: var(--portfolio-page-dark);
 }
 
-nav div a:hover,
+nav .navbar a:hover,
 #selected {
 	background: linear-gradient(
 		60deg,
@@ -24,9 +24,12 @@ body {
 
 .card-container {
 	/* position: relative; */
-	top: 30vh;
+	/* top: 30vh; */
 	/* left: calc(50vh); */
 	display: flex;
+	align-items: center;
+	margin: 20px;
+	height: 100%;
 	width: 100%;
 }
 
@@ -36,6 +39,7 @@ body {
 	justify-content: center;
 	height: 500px;
 	width: 400px;
+	cursor: pointer;
 	background-color: var(--portfolio-page-dark2);
 	border-radius: 10px;
 	box-shadow: -1rem 0 3rem #000;
@@ -95,6 +99,19 @@ body {
 	}
 	.card:not(:first-child) {
 		margin-left: 0px;
+	}
+
+	.card {
+		width: 70vw;
+		height: 50vh;
+	}
+
+	.card h4 {
+		font-size: 1.3rem;
+	}
+
+	.card-content p {
+		font-size: 0.8rem;
 	}
 
 	.card:hover {

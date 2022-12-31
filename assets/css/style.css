@@ -47,7 +47,6 @@ body {
 	justify-content: space-around;
 	padding: 10vh 10vw 0px 10vw;
 	width: 80vw;
-	height: 100vh;
 }
 
 @font-face {
@@ -81,6 +80,12 @@ body {
 	src: url(../font/ZeldaDXTTBRK.ttf);
 }
 
+:focus-visible {
+	outline: none;
+	text-decoration-line: underline;
+	text-decoration-style: double;
+}
+
 .bottom-page {
 	background: linear-gradient(
 		60deg,
@@ -91,7 +96,7 @@ body {
 }
 
 h1 {
-	font-family: 'Marker';
+	font-family: 'Nerko One';
 	letter-spacing: 0.5vw;
 	font-size: 10rem;
 }
@@ -118,6 +123,10 @@ p {
 	font-size: 1rem;
 }
 
+.phonenavbar {
+	display: none;
+}
+
 nav {
 	display: flex;
 	height: 4vh;
@@ -127,15 +136,15 @@ nav {
 	padding-top: 2vh;
 	z-index: 9;
 }
-nav div {
+nav .navbar {
 	display: flex;
-	width: 40%;
+	width: 40rem;
 	justify-content: space-around;
 	align-items: center;
-	background-color: rgba(220, 220, 220, 0.8);
+	background-color: rgba(190, 190, 190, 0.8);
 	border-radius: 20px 10px / 20px 10px;
 }
-nav div a {
+nav .navbar a {
 	text-decoration: none;
 	font-weight: bold;
 	color: black;
@@ -143,14 +152,14 @@ nav div a {
 	align-items: center;
 	justify-content: center;
 	height: 90%;
-	font-size: 1vw;
+	font-size: 1rem;
 	padding-left: 5%;
 	padding-right: 5%;
 	border-radius: 12px;
 	font-family: 'Reggae One';
 }
 
-nav div a:hover,
+nav .navbar a:hover,
 #selected {
 	background: linear-gradient(
 		60deg,
@@ -249,10 +258,10 @@ li {
 
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
-	nav div {
+	/* nav ul {
 		width: 80vw;
 		font-size: 3vw;
-	}
+	} */
 	.waves {
 		height: 40px;
 		min-height: 40px;
@@ -262,5 +271,119 @@ li {
 	}
 	.snowflakes {
 		display: none;
+	}
+
+	h1 {
+		font-size: 3rem;
+	}
+	h2 {
+		font-size: 1.5rem;
+	}
+	h3 {
+		font-size: 1rem;
+	}
+	h4 {
+		font-size: 0.8rem;
+	}
+	p {
+		font-size: 0.5rem;
+	}
+
+	nav {
+		justify-content: right;
+	}
+	nav .navbar {
+		position: fixed;
+		width: 50vw;
+		height: 30vh;
+		display: none;
+		flex-direction: column;
+		padding-top: 50px;
+	}
+	nav .navbar a {
+		height: 30px;
+	}
+
+	.phonenavbar {
+		z-index: 10;
+		display: flex;
+		justify-content: right;
+		align-items: center;
+		width: 150px;
+		height: 50px;
+		margin-top: 10px;
+		margin-right: 20px;
+	}
+
+	.phonenavbar p {
+		display: none;
+		font-size: 1rem;
+		margin-right: 10px;
+	}
+
+	.phonenavbar div {
+		/* position: absolute; */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50px;
+		height: 50px;
+	}
+
+	.phonenavbar div span {
+		position: absolute;
+
+		display: block;
+		width: 22px;
+		height: 4px;
+		border-radius: 30px;
+
+		background-color: black;
+
+		transition: background 0.5s;
+	}
+
+	.phonenavbar span::before,
+	.phonenavbar span::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translateY(-7px);
+		border-radius: 30px;
+
+		display: block;
+		width: 22px;
+		height: 4px;
+
+		background-color: black;
+
+		transition: transform 0.5s;
+	}
+	.phonenavbar span::after {
+		transform: translateY(7px);
+	}
+
+	.phonenavbar.navbar-opened span {
+		background: transparent;
+	}
+	.phonenavbar.navbar-opened span::before {
+		transform: translateY(0) rotate(45deg);
+	}
+	.phonenavbar.navbar-opened span::after {
+		transform: translateY(0) rotate(-45deg);
+	}
+
+	.rotatesvg {
+		animation: rotation 0.5s ease-in-out;
+	}
+
+	@keyframes rotation {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(180deg);
+		}
 	}
 }

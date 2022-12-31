@@ -112,6 +112,12 @@
 	border-radius: 5px;
 }
 
+.modal .modal-footer-button:focus {
+	outline: none;
+	text-decoration-line: underline;
+	text-decoration-style: double;
+}
+
 /* Confirm Modal */
 
 .confirm-modal {
@@ -127,11 +133,11 @@
 }
 
 .confirm-modal .modal-footer-button:nth-child(1) {
-	background-color: lightgreen;
+	background-color: greenyellow;
 }
 
 .confirm-modal .modal-footer-button:nth-child(1):hover {
-	box-shadow: 0px 0px 10px 0px greenyellow;
+	box-shadow: 0px 0px 15px 2px lightgreen;
 }
 
 .confirm-modal .modal-footer-button:nth-child(2) {
@@ -139,7 +145,7 @@
 }
 
 .confirm-modal .modal-footer-button:nth-child(2):hover {
-	box-shadow: 0px 0px 10px 0px salmon;
+	box-shadow: 0px 0px 10px 2px salmon;
 }
 
 /* Error Modal */
